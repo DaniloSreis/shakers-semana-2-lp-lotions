@@ -54,6 +54,34 @@
     </section>
   {% endif %}
 </main>
+<footer class="footer">
+  <div class="footer__content container">
+    <div class="footer__branding">
+      <h2 class="footer__title">{{ page.title }}</h2>
+      <span class="footer__phrase">{{ section.settings.footer_phrase }}</span>
+    </div>
+
+    <nav class="footer__navigation" aria-label="Navegação secundária">
+      <ul class="footer__list">
+        {% for link in linklists['footer'].links %}
+          <li class="header__item">
+            <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <nav class="footer__navigation" aria-label="Links de suporte">
+      <ul class="footer__list">
+        {% for link in linklists['footer-suporte'].links %}
+          <li class="header__item">
+            <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</footer>
 
 {% schema %}
   {
@@ -67,6 +95,11 @@
         "type": "collection",
         "id": "collection",
         "label": "Coleção de Loções"
+      }, {
+        "type": "text",
+        "id": "footer_phrase",
+        "label": "frase",
+        "default": "O cuidado que sua pele merece, o brilho que você irradia."
       }
     ],
     "presets": [
