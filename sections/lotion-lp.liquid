@@ -1,11 +1,18 @@
 {{ "lotion-lp.css" | asset_url | stylesheet_tag }}
-
-<section class="lotion-lp">
-  <h1>{{ page.title }}</h1>
-  <div class="page-content">
-    {{ page.content }}
+<header class="header">
+  <div class="header__content container">
+    <h1 class="header__title">{{ page.title }}</h1>
+    <nav class="header__nav">
+      <ul class="header__list">
+        {% for link in linklists['main-menu'].links %}
+          <li class="header__item">
+            <a href="{{ link.url }}" class="header__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
-</section>
+</header>
 
 {% schema %}
   {
