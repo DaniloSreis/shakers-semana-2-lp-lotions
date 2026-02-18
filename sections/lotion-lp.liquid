@@ -30,6 +30,29 @@
       </div>
     </section>
   {% endif %}
+  {% assign selected_collection = section.settings.collection %}
+  {% if selected_collection != blank %}
+    <section class="products">
+      <div class="products__content container">
+        <h2 class="products__title">{{ selected_collection.title }}</h2>
+        <div class="products__list">
+          {% for product in selected_collection.products %}
+            <article class="product">
+              {{ product.featured_image | image_url: width: 350 | image_tag: class: 'product__image', loading: 'lazy' }}
+              <h3 class="product__title">{{ product.title }}</h3>
+              <span class="product__price">{{ product.price | money }}</span>
+              <ul class="product__tags">
+                {% for tag in product.tags %}
+                  <li class="product__tag">{{ tag }}</li>
+                {% endfor %}
+              </ul>
+              <a href="{{ product.url }}" class="product__button">Ver mais</a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 </main>
 
 {% schema %}
