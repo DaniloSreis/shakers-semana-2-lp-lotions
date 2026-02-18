@@ -13,10 +13,43 @@
     </nav>
   </div>
 </header>
+<main class="main">
+  {% assign featured_product = section.settings.featured_product %}
+  {% if featured_product != blank %}
+    <section class="hero">
+      <div class="hero__content container">
+        <div class="hero__informations">
+          <span class="hero__eyebrow">Destaque</span>
+          <h2 class="hero__title">Hidratação Profunda com a Essência Pura da Natureza.</h2>
+          <p class="hero__description">
+            {{ featured_product.description | strip_html }}
+          </p>
+          <a href="{{ featured_product.url }}" class="hero__button">Ver mais</a>
+        </div>
+        {{ featured_product.featured_image | image_url: width: 350 | image_tag: class: 'hero__image', loading: 'lazy' }}
+      </div>
+    </section>
+  {% endif %}
+</main>
 
 {% schema %}
   {
     "name": "Lotion LP Section",
-    "settings": []
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Produto em Destaque"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Coleção de Loções"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Loções"
+      }
+    ]
   }
 {% endschema %}
