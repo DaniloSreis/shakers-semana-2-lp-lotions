@@ -1,0 +1,12 @@
+{
+  "name": "Loções",
+  "sections": {
+    "main": {
+      "type": "lotion-lp",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
