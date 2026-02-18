@@ -1,0 +1,32 @@
+/* HEADER CSS */
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 2em;
+}
+
+.header__list {
+  display: flex;
+  gap: 30px;
+}
+
+.header__link {
+  color: var(--primary-text);
+  padding-block: 0.6em;
+  position: relative;
+}
+
+.header__link::before {
+  background: var(--highlight);
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.header__link:hover::before {
+  width: 100%;
+}
