@@ -2,6 +2,10 @@
 
 Este repositório contém a solução do desafio técnico da Semana 2, focado em desenvolvimento Shopify, versionamento via GitHub e dinamismo com objetos Liquid.
 
+## 🎥 Demonstração em Vídeo
+Confira a apresentação completa da landing page: 
+[Clique aqui para assistir ao vídeo no youtube](https://youtu.be/ObTfMKjxJ9Y)
+
 ## 🚀 O que foi implementado
 
 - **Template Exclusivo**: Criação do arquivo `templates/page.lotion-lp.json`.
