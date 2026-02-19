@@ -2,6 +2,9 @@
 
 Este repositório contém a solução do desafio técnico da Semana 2, focado em desenvolvimento Shopify, versionamento via GitHub e dinamismo com objetos Liquid.
 
+## Apresentação da solução do desafio
+<video controls src="apresentacao-do-desafio.mp4" title="Title"></video>
+
 ## 🚀 O que foi implementado
 
 - **Template Exclusivo**: Criação do arquivo `templates/page.lotion-lp.json`.
